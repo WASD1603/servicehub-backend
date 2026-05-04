@@ -25,7 +25,7 @@ app.get("/", (req, res) => {
 // MongoDB Atlas connection
 mongoose
   .connect(
-    "mongodb+srv://pranavat003_db_user:sgREmMWketFj6rYY@cluster0.rmo2hob.mongodb.net/serviceApp?retryWrites=true&w=majority"
+    mongoose.connect(process.env.MONGO_URI)
   )
   .then(() => console.log("✅ MongoDB Atlas connected"))
   .catch((err) => console.log("❌ DB Error:", err));
